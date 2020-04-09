@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,43 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
-      </nav>
+      </nav> -->
+    
+
+    <?php
+    if(! isset($page_name)){
+        $page_name = '';
+    }
+    ?>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item <?= $page_name=='data-list' ? 'active' : '' ?>">
+                        <a class="nav-link" href="20200409_datalist.php">資料列表</a>
+                    </li>
+                    <li class="nav-item <?= $page_name=='data-insert' ? 'active' : '' ?>">
+                        <a class="nav-link" href="20200409_datainsert.php">新增資料</a>
+                    </li>
+                    <li class="nav-item <?= $page_name=='data-insert2' ? 'active' : '' ?>">
+                        <a class="nav-link" href="20200409_datainsert2.php">新增資料 2 ajax</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <style>
+        #navbarSupportedContent .nav-item.active {
+            background-color: #7abaff;
+        }
+    </style>
+ 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
