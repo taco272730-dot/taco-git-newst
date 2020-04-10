@@ -29,6 +29,14 @@ $stmt = $pdo->query($sql);
 <?php include __DIR__. '/part/html-head.php'; ?>
 <?php include __DIR__. '/part/navbar.php'; ?>
 
+    <style>
+        tbody tr i.fa-trash-alt {
+            color: red;
+        }
+
+
+    </style>
+
 <div class="container">
     <div class="row">
         <div class="col">
@@ -58,23 +66,41 @@ $stmt = $pdo->query($sql);
             <table class="table table-striped">
                 <thead>
                 <tr>
+                    <th scope="col"><i class="fas fa-trash-alt"></i></th>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Mobile</th>
                     <th scope="col">Email</th>
                     <th scope="col">Birthday</th>
                     <th scope="col">Address</th>
+                    <th scope="col"><i class="fas fa-edit"></i></th>
+
                 </tr>
                 </thead>
             <tbody>
                 <?php while($r=$stmt->fetch()): ?>
                 <tr>
+                    <!-- <td>
+                        <a href="javascript: delete_it(<?= $r['sid'] ?>)">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td> -->
+                    <td>
+                        <a class="del-link" href="20200410_datadelet.php?sid=<?= $r['sid'] ?>">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
                     <td><?= $r['sid'] ?></td>
                     <td><?= $r['name'] ?></td>
                     <td><?= $r['mobile'] ?></td>
                     <td><?= $r['email'] ?></td>
                     <td><?= $r['birthday'] ?></td>
                     <td><?= $r['address'] ?></td>
+                    <td>
+                        <a href="20200410_dataedit.php?sid=<?= $r['sid'] ?>">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </td>
                 </tr>
                 <?php endwhile; ?>
             </tbody>
@@ -82,5 +108,23 @@ $stmt = $pdo->query($sql);
         </div>
     </div>
 </div>
+
+
+<script>
+    function delete_it(sid){
+        if(confirm(`確定要刪除資料編號為 ${sid} 的項目嗎?`)){
+            location.href = '20200410_datadelet.php?sid=' + sid;
+        }
+    }
+
+    $('.del-link').click(function(event){
+        // console.log(this);
+        // console.log($(this));
+        let sid = $(this).parent().next().text();
+        if(! confirm(`確定要刪除資料嗎?`)){
+            event.preventDefault();
+        }
+    });
+</script>
 
 <?php include __DIR__. '/part/html-footer.php'; ?>
