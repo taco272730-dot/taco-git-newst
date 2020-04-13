@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            position: fixed;
+            top: 0;
+            right: 50%;
+        }
+        section{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#a">a</a></li>
+        <li><a href="#b">b</a></li>
+        <li><a href="#c">c</a></li>
+        <li><a href="#d">d</a></li>
+
+    </ul>
+    <section id="a">a</section>
+    <section id="b">b</section>
+    <section id="c">c</section>
+    <section id="d">d</section>
+
+
+
+
+
+    <script>
+        window.addEventListener('hashchange', function(event){
+            console.log(location.hash);
+        });
+    
+        console.log(location.hash);
+    
+    
+    </script>
+</body>
+</html>
