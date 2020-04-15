@@ -50,11 +50,13 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item <?= $page_name=='data-list' ? 'active' : '' ?>">
-                        <a class="nav-link" href="20200409_datalist.php">資料列表</a>
+                    <li class="nav-item <?= $page_name=='product-list' ? 'active' : '' ?>">
+                        <a class="nav-link" href="20200415_productlist.php">商品列表</a>
                     </li>
                     <li class="nav-item <?= $page_name=='data-insert' ? 'active' : '' ?>">
-                        <a class="nav-link" href="20200409_datainsert.php">新增資料</a>
+                      <a class="nav-link" href="cart-list.php">購物車
+                        <span class="badge badge-pill badge-info cart-count">0</span>
+                      </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
