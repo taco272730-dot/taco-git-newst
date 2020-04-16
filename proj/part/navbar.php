@@ -54,7 +54,7 @@
                         <a class="nav-link" href="20200415_productlist.php">商品列表</a>
                     </li>
                     <li class="nav-item <?= $page_name=='data-insert' ? 'active' : '' ?>">
-                      <a class="nav-link" href="cart-list.php">購物車
+                      <a class="nav-link" href="20200415_cart-list.php">購物車
                         <span class="badge badge-pill badge-info cart-count"></span>
                       </a>
                     </li>
@@ -73,7 +73,7 @@
                         </li>
                     <?php else:  ?>
                         <li class="nav-item <?= $page_name=='login' ? 'active' : '' ?>">
-                            <a class="nav-link" href="login.php">登入</a>
+                            <a class="nav-link" href="20200413_login.php">登入</a>
                         </li>
                         <li class="nav-item <?= $page_name=='data-insert' ? 'active' : '' ?>">
                             <a class="nav-link" href="register.php">註冊</a>
